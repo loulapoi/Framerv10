@@ -1,0 +1,27 @@
+/* Phase 1 — global base for the Framer reconstruction.
+   The Framer export ships its own scoped CSS via withCSS(); we only
+   reset the document shell so sections render full-bleed and stacked. */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--token-9ac9dc08-9c5a-459d-a360-b1ebb1520f81, rgb(252, 249, 245));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+/* Each Framer section is width:100% already; keep the column seamless. */
+#root > * {
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+/* Phase 1 — targeted fixes for rendering the Framer code-export standalone.
+   The Framer page renderer normally supplies a fixed section height so that
+   "fill parent" columns (flex:1 0 0; height:1px) expand. Rendered standalone
+   the root is height:auto, so those columns collapse. We restore the
+   per-breakpoint intrinsic heights for the affected (full-height) sections. */
+
+/* HERO (.framer-F2l5C): central column uses flex:1 0 0px / height:1px. */
+section.framer-F2l5C {
+  min-height: 784px; /* Desktop | L / M */
+}
+@media (max-width: 1199px) {
+  section.framer-F2l5C {
+    min-height: 880px; /* Tablet */
+  }
+}
+@media (max-width: 809px) {
+  section.framer-F2l5C {
+    min-height: 720px; /* Phone */
+  }
+}
+
+/* PRICING (.framer-RFZnV): the section's entrance scale is driven by a
+   framer-motion useScroll progress. Standalone (outside Framer's page
+   renderer, under Lenis) that progress never resolves, freezing the root
+   at its initial scale(0.4). The original renders settled at scale 1, so
+   we pin the root to its natural transform. Important beats the non-important
+   inline transform framer-motion writes. */
+section.framer-RFZnV {
+  transform: none !important;
+}
+
+/* Button/pill label colors: a few variant labels resolve to a color that
+   matches their own background when rendered standalone (the extracted
+   --framer-text-color var doesn't resolve outside Framer's page renderer).
+   Restore the correct contrast per button/pill VARIANT (semantic, not
+   per-instance), matching the original site. */
+
+/* "Secondary" button = light/white background -> near-black label
+   (e.g. "How does it work?"). Primary (dark) buttons are untouched. */
+.framer-i8bq37.framer-v-ggn11p .framer-text {
+  color: rgb(13, 13, 13) !important;
+}
+
+/* "White" button variant = white background -> near-black label
+   (e.g. CTA "Say Hello"). The dark Hero "Say Hello" variant is untouched. */
+.framer-5etivg.framer-v-18d844t .framer-text {
+  color: rgb(13, 13, 13) !important;
+}
+
+/* Niches "Dark" (active/highlighted) pill = dark background -> white label
+   (Automotive / Real estate / Courses). White pills are untouched. */
+.framer-12foz17.framer-v-1spxc11 .framer-text {
+  color: rgb(255, 255, 255) !important;
+}

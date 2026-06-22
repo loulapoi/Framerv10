@@ -1,0 +1,169 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 784px;
+  max-height: 960px;
+  height: calc(100vh - 0px);
+  max-height: 880px;
+  overflow: hidden;
+  background: var(--c-cream);
+  display: flex;
+  flex-direction: column;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 70%;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.9;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 66%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,0) 66%);
+  filter: saturate(1.02);
+}
+.hero__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(85% 75% at 49% 27%, #000 50%, transparent 83%);
+  mask-image: radial-gradient(85% 75% at 49% 27%, #000 50%, transparent 83%);
+  opacity: 0.5;
+}
+
+.hero__stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 64px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  border-radius: var(--radius-pill);
+  background: var(--c-accent);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 22px rgba(255, 84, 46, 0.3);
+}
+.hero__badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; }
+
+.hero__title {
+  max-width: 16ch;
+  margin: 0;
+}
+.hero__title-muted { color: var(--t-body); }
+
+.hero__sub {
+  max-width: 30rem;
+  font-size: var(--fs-body-lg);
+  line-height: 1.55;
+  color: var(--t-body);
+}
+
+.hero__trust {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--t-body);
+}
+.hero__avatars { display: flex; }
+.hero__avatars img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--c-cream);
+  margin-left: -10px;
+}
+.hero__avatars img:first-child { margin-left: 0; }
+
+/* Floating mockups */
+.hero__mock { position: absolute; z-index: 2; pointer-events: none; }
+.hero__mock img { border-radius: 14px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.22); }
+.hero__mock--left { left: max(2%, calc(50% - 600px)); bottom: 8%; width: 190px; }
+.hero__mock--left img { width: 100%; }
+.hero__mock--right { right: max(1%, calc(50% - 640px)); top: 16%; width: 340px; }
+.hero__mock--right img { width: 100%; }
+
+.hero__chip {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  backdrop-filter: blur(4px);
+}
+
+.hero__cursor { position: absolute; display: flex; align-items: flex-start; gap: 2px; }
+.hero__cursor-label {
+  margin-top: 12px;
+  margin-left: -2px;
+  padding: 3px 9px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.hero__cursor--phone { bottom: -6px; left: -10px; }
+.hero__cursor--laptop { right: -34px; bottom: 40px; }
+
+/* Bottom location bar */
+.hero__bottombar {
+  position: relative;
+  z-index: 3;
+  border-top: 1px dashed var(--line);
+  background: rgba(252, 249, 245, 0.6);
+}
+.hero__bottombar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 16px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--t-body);
+}
+.hero__time { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 1100px) {
+  .hero__mock--right { width: 260px; right: 1%; }
+  .hero__mock--left { width: 150px; left: 1%; }
+}
+@media (max-width: 760px) {
+  .hero { min-height: 720px; }
+  .hero__mock { opacity: 0.5; }
+  .hero__mock--right { width: 180px; top: auto; bottom: 12%; right: -30px; }
+  .hero__mock--left { width: 120px; left: -24px; bottom: 18%; }
+  .hero__title { font-size: clamp(38px, 12vw, 52px); }
+}

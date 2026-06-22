@@ -1,0 +1,67 @@
+/* ============================================================
+   Sol Agency — Design tokens (Phase 2, framework-independent)
+   Extracted 1:1 from the Framer canvas, re-expressed as
+   semantic CSS custom properties.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --c-cream: rgb(252, 249, 245);
+  --c-cream-alt: rgb(251, 249, 245);
+  --c-paper: rgb(240, 238, 235);
+  --c-white: rgb(255, 255, 255);
+
+  /* Ink */
+  --c-black: rgb(0, 0, 0);
+  --c-ink: rgb(13, 13, 13);
+  --c-night: rgb(18, 18, 18);
+  --c-coal: rgb(33, 33, 33);
+  --c-graphite: rgb(69, 69, 69);
+
+  /* Accent + tints */
+  --c-accent: rgb(255, 84, 46);
+  --c-cream-yellow: rgb(255, 255, 230);
+  --c-beige: rgb(237, 237, 216);
+
+  /* Text */
+  --t-strong: rgb(13, 13, 13);
+  --t-body: rgba(0, 0, 0, 0.55);
+  --t-on-dark: rgba(255, 255, 255, 0.7);
+  --t-on-dark-soft: rgba(255, 255, 255, 0.6);
+  --t-hand: rgb(95, 95, 107);
+
+  /* Lines / borders */
+  --line: rgba(33, 33, 33, 0.18);
+  --line-soft: rgba(0, 0, 0, 0.08);
+  --line-on-dark: rgba(255, 255, 255, 0.12);
+
+  /* Type families */
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Satoshi", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-hand: "Gloria Hallelujah", "Comic Sans MS", cursive;
+
+  /* Type scale (size / line-height) — matches Framer text styles */
+  --fs-display: 64px;   /* Instrument Serif 1.02 */
+  --fs-h2: 56px;        /* 1.1 */
+  --fs-h3: 44px;        /* 1.15 */
+  --fs-h4: 36px;        /* 1.25 */
+  --fs-h5: 28px;        /* 1.4 */
+  --fs-lead: 22px;      /* Satoshi 1.35 */
+  --fs-body-lg: 18px;   /* 1.55 */
+  --fs-body: 16px;      /* 1.6 */
+  --fs-sm: 14px;        /* 1.4 */
+  --fs-xs: 13px;        /* 1.2 */
+  --fs-hand: 15px;      /* Gloria 1.8 */
+
+  /* Layout */
+  --maxw: 1280px;
+  --gutter: 24px;
+  --radius-pill: 999px;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-loop: cubic-bezier(0.44, 0, 0.56, 1);
+}

@@ -1,0 +1,32 @@
+.niches {
+  padding-block: clamp(64px, 9vw, 120px);
+  border-top: 1px dashed var(--line);
+  overflow: hidden;
+}
+.niches__rows {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.niche-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  border: 1px solid var(--line);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--c-ink);
+  white-space: nowrap;
+}
+.niche-pill svg { color: var(--c-graphite); }
+.niche-pill.is-active {
+  background: var(--c-coal);
+  border-color: var(--c-coal);
+  color: #fff;
+}
+.niche-pill.is-active svg { color: var(--c-accent); }

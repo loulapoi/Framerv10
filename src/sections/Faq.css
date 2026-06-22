@@ -1,0 +1,88 @@
+.faq {
+  position: relative;
+  padding-block: clamp(64px, 9vw, 120px);
+  border-top: 1px dashed var(--line);
+  overflow: hidden;
+}
+.faq__glow {
+  position: absolute;
+  top: 30%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 84, 46, 0.5), transparent 70%);
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.faq__glow--l { left: -120px; }
+.faq__glow--r { right: -120px; top: 50%; }
+.faq__inner { position: relative; z-index: 1; }
+
+.faq__list {
+  margin-top: 48px;
+  max-width: 760px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq__item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.faq__item.is-open { background: #fff; border-color: rgba(33, 33, 33, 0.28); }
+.faq__q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+.faq__toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+}
+.faq__toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1.8px;
+  background: var(--c-ink);
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.faq__toggle span:last-child { transform: translate(-50%, -50%) rotate(90deg); }
+.is-open .faq__toggle span:last-child { transform: translate(-50%, -50%) rotate(0); opacity: 0; }
+
+.faq__a-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.34s var(--ease-out);
+}
+.is-open .faq__a-wrap { grid-template-rows: 1fr; }
+.faq__a { overflow: hidden; }
+.faq__a p {
+  padding: 0 24px 24px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t-body);
+  max-width: 60ch;
+}

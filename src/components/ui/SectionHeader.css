@@ -1,0 +1,53 @@
+.sec-head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+}
+.sec-head--center { align-items: center; text-align: center; margin-inline: auto; }
+.sec-head--left { align-items: flex-start; text-align: left; }
+
+.sec-head__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+.sec-head__eyebrow svg { color: var(--c-accent); }
+
+.sec-head__title {
+  max-width: 14ch;
+}
+.sec-head--left .sec-head__title { max-width: 18ch; }
+
+.sec-head__subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-lg);
+  line-height: 1.55;
+  color: var(--t-body);
+  max-width: 52ch;
+}
+
+.sec-head__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+.sec-head--center .sec-head__actions { justify-content: center; }
+
+/* Dark tone (e.g. Pricing on dark bg) */
+.sec-head--dark .sec-head__title,
+.sec-head--dark .sec-head__eyebrow { color: #fff; }
+.sec-head--dark .sec-head__eyebrow {
+  border-color: var(--line-on-dark);
+  background: rgba(255, 255, 255, 0.06);
+}
+.sec-head--dark .sec-head__subtitle { color: var(--t-on-dark); }

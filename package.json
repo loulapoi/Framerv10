@@ -1,0 +1,27 @@
+{
+  "name": "sol-agency-framer-reconstruction",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Phase 1 — Sol Agency template reconstructed from the Framer (Design to AI) code export, running on Vite + React.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@motionone/dom": "^10.18.0",
+    "framer-motion": "^11.11.17",
+    "lenis": "^1.1.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

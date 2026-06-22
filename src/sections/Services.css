@@ -1,0 +1,93 @@
+.services {
+  padding-block: clamp(64px, 9vw, 120px);
+  border-top: 1px dashed var(--line);
+}
+.services__panel-wrap { margin-top: 56px; }
+.services__panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-night);
+  color: #fff;
+  padding: clamp(36px, 5vw, 72px);
+  min-height: 420px;
+}
+.services__panel-bg {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  filter: grayscale(0.3) brightness(0.7);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+.services__panel-content { position: relative; z-index: 1; max-width: 760px; }
+.services__panel-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  color: #fff;
+}
+.services__panel-body {
+  margin-top: 16px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--t-on-dark);
+  max-width: 56ch;
+}
+.services__bullets {
+  margin: 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+}
+.services__bullets li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
+}
+.services__bullets svg { color: var(--c-accent); }
+
+.services__stats {
+  margin-top: 72px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px dashed var(--line);
+}
+.services__stat {
+  padding: 40px clamp(20px, 3vw, 40px);
+  border-right: 1px dashed var(--line);
+}
+.services__stat:last-child { border-right: none; }
+.services__stat-value {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  color: var(--c-ink);
+}
+.services__stat-label {
+  margin-top: 14px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--c-ink);
+}
+.services__stat-body {
+  margin-top: 8px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--t-body);
+}
+
+@media (max-width: 760px) {
+  .services__stats { grid-template-columns: 1fr; }
+  .services__stat { border-right: none; border-bottom: 1px dashed var(--line); }
+  .services__stat:last-child { border-bottom: none; }
+}

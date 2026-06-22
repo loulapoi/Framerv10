@@ -1,0 +1,88 @@
+.about {
+  padding-block: clamp(64px, 9vw, 120px);
+  border-top: 1px dashed var(--line);
+}
+.about__video-wrap { margin-top: 56px; }
+.about__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 8.4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #0d0d0d;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
+}
+.about__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+}
+.about__video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35));
+}
+.about__play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0d0d0d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease;
+}
+.about__video:hover .about__play { transform: scale(1.08); }
+.about__video-label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.about__features {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  border-top: 1px dashed var(--line);
+  padding-top: 56px;
+}
+.about__feature { display: flex; flex-direction: column; gap: 12px; }
+.about__feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--c-ink);
+}
+.about__feature-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--c-ink);
+}
+.about__feature-body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--t-body);
+  max-width: 34ch;
+}
+
+@media (max-width: 860px) {
+  .about__features { grid-template-columns: 1fr; gap: 32px; }
+}
